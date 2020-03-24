@@ -28,6 +28,7 @@
   background-repeat: no-repeat;
   font-size: 25px;
   padding: 150px 300px;
+  font-weight: bolder;
 }
 .jumbotron {
   margin: 0px auto;
@@ -123,7 +124,50 @@ body {
   background: url(img/cardBackground.png);
   box-shadow: 3px 8px 20px 8px rgba(0,0,0,0.2);
 }
-
+.example1 {
+ height: 150px;  
+ overflow: hidden;
+ position: relative;
+}
+.example1 h3 {
+ font-size: 3em;
+ color: blue;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 500px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);    
+ transform:translateX(100%);
+ /* Apply animation to this element */  
+ -moz-animation: example1 15s linear infinite;
+ -webkit-animation: example1 15s linear infinite;
+ animation: example1 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example1 {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);       
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
       </style>
       <title>OPEN Community</title>
 </head>
@@ -289,10 +333,23 @@ body {
         <br><br><br><br>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="fast col-2">Assocition with</div>
+            <div class="example1 col-2">
+              <h3>The Linux Foundation</h3>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <br><br><br><br>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="row align-text">             
-                <div class="col-4 col-sm-2">
+                <div class="col-3 col-sm-2">
                     <h5 >Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
@@ -301,16 +358,18 @@ body {
                         <li><a href="./contactus.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-4 col-sm-5">
+                <div class="col-1"></div>
+                <div class="col-3 col-sm-5">
                     <h5>Our Address</h5>
                     <address>
                       Main Office<br>SCS UPES, Dehradun<br><br>
-                      <i class="fa fa-phone fa-lg"></i>: +91 9758835171 +91 7310251657<br>
-                      <i class="fa fa-fax fa-lg"></i>: +91 9758835171 +91 7310251657<br>
+                      <i class="fa fa-phone fa-lg"></i>: +91 9758835171<br> +91 7310251657<br>
+                      <i class="fa fa-fax fa-lg"></i>: +91 9758835171<br> +91 7310251657<br>
                       <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:open@ddn.upes.ac.in">open@ddn.upes.ac.in</a>
                    </address>
                 </div>
-                <div class="text-center col-4 col-sm5">
+                <div class="col-1"></div>
+                <div class="text-center col-3 col-sm5">
                         <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
                         <a class="btn btn-social-icon btn-instagram" href="http://google.com/+"><i class="fa fa-instagram fa-lg"></i></a>
                         <a class="btn btn-social-icon btn-facebook"  href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
@@ -320,7 +379,8 @@ body {
                         <a class="btn btn-social-icon"  href="mailto:open@ddn.upes.ac.in"><i class="fa fa-envelope-o fa-lg"></i></a>
                 </div>  
            </div>
-           <div class="row justify-content-center" style="font-size: small; align-content: bottom;">             
+
+           <div class="row justify-content-center" style="font-size: small;">             
                 <div class="col-auto">
                     <p>Copyright ©2020 All rights reserved | Made with <i class="fa fa-heart fa-lg"></i> </p>
                 </div>
